@@ -1,12 +1,19 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@/App'
+
 import router from './router'
-import store from './store'
+import elementUi from 'element-ui'
+import iView from 'iview'
+import normalize from './assets/normalize.css'
+
 
 Vue.config.productionTip = false
+Vue.use(elementUi);
+Vue.use(normalize);
+Vue.use(iView);
 
+/* eslint-disable no-new */
 new Vue({
   router,
-  store,
   render: h => h(App)
 }).$mount('#app')
