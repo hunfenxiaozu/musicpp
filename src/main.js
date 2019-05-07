@@ -3,6 +3,7 @@ import App from '@/App'
 
 import router from './router'
 import elementUi from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
 import iView from 'iview'
 import normalize from './assets/normalize.css'
 
