@@ -46,8 +46,6 @@ export default {
         } else{
           if(value.length > 24){
             callback(new Error('用户名长度过长，请控制在24个字符以下'));
-          }else{
-            console.log(value.length);
           }
           callback();
         }
