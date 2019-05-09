@@ -5,7 +5,7 @@ import Music from '@/views/music/Music'
 import Bbs from '@/views/bbs/Bbs'
 import Logon from './views/logon/logon'
 import Login from './views/login/login'
-
+import Recommend from './views/recommend/Recommend'
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
@@ -18,7 +18,13 @@ const router = new Router({
       children: [
         {
           path: "/music",
-          component:  Music 
+          component:  Music ,
+          children:[
+             {
+              path: '/recommend',
+              component: Recommend
+            }
+          ]
         },
         {
           path: "/bbs",
