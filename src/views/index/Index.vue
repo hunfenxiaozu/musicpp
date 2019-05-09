@@ -1,7 +1,14 @@
 <template>
   <div id="index">
-    <navbar></navbar>
-    <router-view />
+
+
+  	<navbar></navbar>
+	<router-view />
+
+
+
+    
+    
   </div>
 </template>
 
