@@ -1,28 +1,34 @@
 {
-  "users": [
+  "userInfo": [
     {
-      "id": "9001",
+      "id": "001",
       "username": "周先生",
       "password": "123123123",
-      "sex": "男",
-      "phone": "13827100447",
-      "address": "学海714"
+      "email": "13827100447@qq.com"
     },
     {
-      "id": "9002",
+      "id": "002",
       "username": "王先生",
       "password": "456456456",
-      "sex": "男",
-      "phone": "13827100447",
-      "address": "学海888"
+      "email": "13827100447@qq.com"
     },
     {
-      "id": "9003",
+      "id": "003",
       "username": "李女士",
       "password": "787878",
-      "sex": "女",
-      "phone": "13827100447",
-      "address": "学海总统房"
+      "email": "13827100447@qq.com"
+    },
+    {
+      "username": "test",
+      "password": "123123",
+      "email": "123@123.com",
+      "id": "H5e6HuA"
+    },
+    {
+      "username": "test03",
+      "password": "qweqwe",
+      "email": "123@999.com",
+      "id": "FEMWZVp"
     }
   ]
 }
