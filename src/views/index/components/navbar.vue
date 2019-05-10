@@ -1,8 +1,8 @@
 <template>
 
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <el-menu-item class="elitem" index="1"><router-link to="/">logo</router-link></el-menu-item>
-        <el-menu-item class="elitem" index="2"><router-link to="/music">找想听的音乐</router-link></el-menu-item>
+        <el-menu-item class="elitem" index="1"><router-link to="/recommend">logo</router-link></el-menu-item>
+        <el-menu-item class="elitem" index="2"><router-link to="/recommend">找想听的音乐</router-link></el-menu-item>
         <el-menu-item class="elitem" index="3"><router-link to="/bbs">说音乐相关的话题</router-link></el-menu-item>
         <el-menu-item >
           <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">

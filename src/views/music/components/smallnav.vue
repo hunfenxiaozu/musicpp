@@ -7,10 +7,10 @@
 		background-color="#409EFF"
 		text-color="#fff"
 		active-text-color="#fff">
-		<el-menu-item index="1"><router-link to="recommend">推荐</router-link></el-menu-item>
-		<el-menu-item index="2">排行</el-menu-item>
-		<el-menu-item index="3">歌单</el-menu-item>
-		<el-menu-item index="4">歌手</el-menu-item>
+		<el-menu-item class='elItem' index="1"><router-link to="recommend">推荐</router-link></el-menu-item>
+		<el-menu-item class='elItem' index="2">排行</el-menu-item>
+		<el-menu-item class='elItem' index="3">歌单</el-menu-item>
+		<el-menu-item class='elItem' index="4">歌手</el-menu-item>
 	</el-menu>
 
 </template>
@@ -36,5 +36,8 @@ export default {
     display: flex;
     justify-content: center;
 
+  }
+  .elItem a{
+  	text-decoration: none;
   }
 </style>
