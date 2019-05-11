@@ -6,6 +6,7 @@ import Bbs from '@/views/bbs/Bbs'
 import Logon from './views/logon/logon'
 import Login from './views/login/login'
 import Recommend from './views/recommend/Recommend'
+import Rank from './views/rank/Rank'
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
@@ -23,6 +24,10 @@ const router = new Router({
              {
               path: '/recommend',
               component: Recommend
+            },
+            {
+              path: '/rank',
+              component: Rank
             }
           ]
         },
