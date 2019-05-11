@@ -6,6 +6,10 @@ import Bbs from '@/views/bbs/Bbs'
 import Logon from './views/logon/logon'
 import Login from './views/login/login'
 import Recommend from './views/recommend/Recommend'
+import Evaluation from './views/bbs/evaluation/Evaluation'
+import Mtheory from './views/bbs/mtheory/Mtheory'
+import Stave from './views/bbs/stave/Stave'
+import Simple from './views/bbs/simple/Simple'
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
@@ -15,6 +19,7 @@ const router = new Router({
       path: '/',
       name: 'Index',
       component: Index,
+      redirect: '/recommend',
       children: [
         {
           path: "/music",
@@ -28,7 +33,26 @@ const router = new Router({
         },
         {
           path: "/bbs",
-          component:  Bbs 
+          component:  Bbs,
+          redirect: '/evaluation',
+          children: [
+            {
+              path: "/evaluation",
+              component: Evaluation
+            },
+            {
+              path: "/mtheory",
+              component: Mtheory
+            },
+            {
+              path: "/notation/stave",
+              component: Stave
+            },
+            {
+              path: "/notation/simple",
+              component: Simple
+            },
+          ]
         },
         {
           path: "/logon",
