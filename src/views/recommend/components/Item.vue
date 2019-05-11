@@ -1,9 +1,16 @@
 <template>
  <div class="list">
- 	<div class="title">
-		<div class="tcolotb"></div>
- 		<span>{{title}}</span>
+ 	<div class="alltitle">
+ 		<div class="title">
+			<div class="tcolotb"></div>
+	 		<span>{{title}}</span>
+ 		</div>
+	 	<div class="hot">
+			<div class="tcolotb"></div>
+	 		<span>今日排行</span>
+	 	</div>
  	</div>
+ 	
  	<div class="listmaster">
  		<div class="listleft">
  			<div class="leftlist" v-for="listcontent in listcontent">
@@ -56,10 +63,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-	.title{
+	.title,.hot,.alltitle{
 		display: flex;
 	}
-	.title span{
+	.title{
+		flex:6.5;
+	}
+	.hot{
+		flex:3.5;
+	}
+	.title span,.hot span{
 		line-height: 28px;
 	}
 	.title .tcolotb{
@@ -74,6 +87,8 @@ export default {
 	}
 	.list .listrecommend{
 		width: 36%;
+		display: flex;
+		justify-content: center;
 	}
 	.listleft{
 		display: flex;

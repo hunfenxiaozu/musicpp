@@ -19,28 +19,20 @@ export default {
 	data(){
 		return{
 			title:[ {
-						id : "chinese",
-						title :'华语'
+						id : "original",
+						title :'原创'
 					},
 					{
-						id : "popular",
-						title :'流行'
+						id : "coverUp",
+						title :'翻唱'
 					},
 					{
-						id : "rock",
-						title :'摇滚'
+						id : "solo",
+						title :'独奏'
 					},
 					{
-						id : "ballad",
-						title :'民谣'
-					},
-					{
-						id : "classical",
-						title :'古典'
-					},
-					{
-						id : "acg",
-						title :'acg'
+						id : "coverTan",
+						title :'翻弹'
 					}
 				]
 		}
