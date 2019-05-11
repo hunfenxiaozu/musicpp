@@ -2,8 +2,8 @@
 <div class="master">
 	<carousel />
 	<div class="item">
-		<div v-for = "title in title">
-		<item :title = "title"/>
+		<div v-for = "title in title" :id = "title.id" class="title">
+		<item :title = "title.title"/>
 	</div>
 	</div>
 	
@@ -18,7 +18,31 @@ export default {
 	components: { carousel,item },
 	data(){
 		return{
-			title:[ '华语','流行','摇滚','民谣','古典','acg' ]
+			title:[ {
+						id : "chinese",
+						title :'华语'
+					},
+					{
+						id : "popular",
+						title :'流行'
+					},
+					{
+						id : "rock",
+						title :'摇滚'
+					},
+					{
+						id : "ballad",
+						title :'民谣'
+					},
+					{
+						id : "classical",
+						title :'古典'
+					},
+					{
+						id : "acg",
+						title :'acg'
+					}
+				]
 		}
 	}
  }
@@ -34,8 +58,9 @@ export default {
 	flex-direction: column;
 	align-items: center; 
 }
-.item div{
+.item .title{
 	width: 60%;
+	margin-bottom: 20px;
 }
 
 </style>
