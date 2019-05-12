@@ -11,6 +11,7 @@ import Mtheory from './views/bbs/mtheory/Mtheory'
 import Stave from './views/bbs/stave/Stave'
 import Simple from './views/bbs/simple/Simple'
 import Rank from './views/rank/Rank'
+
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
