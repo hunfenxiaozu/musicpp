@@ -25,6 +25,7 @@ export default {
 <style scoped>
   .layout{
   	width: 60%;
+  	display: flex;
   }
   .master{
   	display: flex;
@@ -35,5 +36,7 @@ export default {
   }
   .rank{
   	width: 70%;
+  	display: flex;
+  	justify-content: center;
   }
 </style>
