@@ -4,7 +4,9 @@
 			<div class="leftnav">
 				<leftnav />
 			</div>
-			<div class="rank"></div>
+			<div class="rank">
+				<rankList />
+			</div>
 		</div>
 		
 	</div>
@@ -13,8 +15,9 @@
 
 <script>
 	import leftnav from './components/Leftnav.vue'
+	import rankList from './components/RankList.vue'
 export default {
-	components: { leftnav }
+	components: { leftnav,rankList }
  }
 </script>
 
