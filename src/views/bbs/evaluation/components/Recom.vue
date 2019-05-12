@@ -29,7 +29,7 @@
 
 <style scoped>
     .canvas{
-        width: 70%;
+        width: 100%;
         height: 350px;
         margin: 10px auto;
         position: relative;
@@ -57,14 +57,14 @@
         text-align: center;
     }
     .brand{
-        width: 70%;
+        width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         margin: 15px auto;
     }
     .brand img{
-        width: 180px;
+        width: 150px;
     }
     a{
         color: #fff;
