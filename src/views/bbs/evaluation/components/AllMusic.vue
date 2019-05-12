@@ -17,6 +17,32 @@
         </div>
         <div class="brand">
             <div class="title2">乐器大厂</div>
+            <div class="all-brand">
+                <div class="brand-item">
+                    <router-link to="/"><img src="../../../../assets/brand/yamaha.png" alt=""></router-link>
+                    <div class="brand-name">雅马哈(YAMAHA)</div>
+                </div>
+                <div class="brand-item">
+                    <router-link to="/"><img src="../../../../assets/brand/Roland.png" alt=""></router-link>
+                    <div class="brand-name">Roland</div>
+                </div>
+                <div class="brand-item">
+                    <router-link to="/"><img src="../../../../assets/brand/squiet.png" alt=""></router-link>
+                    <div class="brand-name">Squiet</div>
+                </div>
+                <div class="brand-item">
+                    <router-link to="/"><img src="../../../../assets/brand/tycoon.png" alt=""></router-link>
+                    <div class="brand-name">Tycoon</div>
+                </div>
+                <div class="brand-item">
+                    <router-link to="/"><img src="../../../../assets/brand/海伦.png" alt=""></router-link>
+                    <div class="brand-name">海伦钢琴</div>
+                </div>
+                <div class="brand-item">
+                    <router-link to="/"><img src="../../../../assets/brand/星海.png" alt=""></router-link>
+                    <div class="brand-name">星海</div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -145,8 +171,8 @@
                             }
                         ]
                     }
-                ],
-            };
+                ]
+            }
         }
     }
 </script>
@@ -182,6 +208,23 @@
     }
     .brand{
         width: 31%;
+    }
+    .all-brand{
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+    .brand-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .all-brand img{
+        width: 80%;
+        border: 1px solid #999;
+    }
+    .all-brand .brand-name{
+        width: 100%;
     }
     .item span{
         display: flex;
