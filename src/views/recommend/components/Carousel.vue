@@ -33,6 +33,10 @@ export default {
     text-align: center;
     margin: 0;
   }
+
+  .leftlist{
+	  width: 30%;
+  }
   
   .el-carousel__item:nth-child(2n) {
     background-color: #99a9bf;

@@ -9,7 +9,7 @@
                     <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+                    <el-button type="primary" @click="loginUser">登录</el-button>
                     <el-button @click="resetForm('ruleForm')">重置</el-button>
                 </el-form-item>
             </el-form>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+    import jwt_decode from 'jwt-decode'
 export default {
     data() {
         var checkUsername = (rule, value, callback) => {
@@ -62,9 +63,7 @@ export default {
         submitForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    const name = this.ruleForm.username
-                    const pass = this.ruleForm.password
-                    this.cAccount(name, pass);
+                    console.log(1)
                 } else {
                     console.log('error submit!!');
                     return false;
@@ -74,29 +73,48 @@ export default {
         resetForm(formName) {
             this.$refs[formName].resetFields();
         },
-        cAccount(username,password) {
-            this.$axios.get("http://localhost:3000/userInfo", {
-                params:{
-                    'username': username,
-                    'password': password
-                }
-            }).then((response) => {
-                if(response.data.length === 0){
+        loginUser () {
+            this.$axios.post('api/users/login', {
+                username: this.ruleForm.username,
+                password: this.ruleForm.password
+            }).then((res) => {
+                console.log(res.data.status);
+                if(res.data.status === "none") {
                     this.$message({
-                        message: '用户名或密码错误，请重试！',
+                        message: '当前用户不存在！',
+                        type: 'error'
+                    });
+                }else if(res.data.status === "error"){
+                    this.$message({
+                        message: '密码错误！',
                         type: 'warning'
                     });
-                }
-                else{
+                }else{
                     this.$message({
-                        message: '登录成功，欢迎您  '+response.data[0].username,
+                        message: '登录成功！ 欢迎您   ',
                         type: 'success'
                     });
-                    this.$router.push("/")
+                    console.log(res);
+                    const { token } = res.data;
+                    localStorage.setItem('Token', token);
+
+                    const decoded = jwt_decode(token);
+                    // console.log(decoded);
+
+                    this.$store.dispatch("setAuthenticated",!this.isEmpty(decoded));
+                    this.$store.dispatch("setUser",decoded);
+
+                    this.$router.push("/");
                 }
-            }).catch((err) => {
-                console.log(err)
             })
+        },
+        isEmpty(value){
+            return (
+                value === undefined ||
+                value === null ||
+                (typeof value === "object" && Object.keys(value).length === 0) ||
+                (typeof value === "string" && value.trim().length === 0)
+            );
         }
     }
  }

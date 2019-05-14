@@ -11,6 +11,7 @@ import Mtheory from './views/bbs/mtheory/Mtheory'
 import Stave from './views/bbs/stave/Stave'
 import Simple from './views/bbs/simple/Simple'
 import Rank from './views/rank/Rank'
+import Personal from './views/personal/Personal'
 
 Vue.use(Router)
 const router = new Router({
@@ -36,6 +37,10 @@ const router = new Router({
               component: Rank
             }
           ]
+        },
+        {
+          path: '/personal',
+          component: Personal
         },
         {
           path: "/bbs",
@@ -71,6 +76,16 @@ const router = new Router({
       ]
     }
   ]
-})
+});
+
+router.beforeEach((to, from, next) => {
+  const isLogin = localStorage.Token ? true : false;
+  if(to.path === "/personal"){
+    isLogin ? next() : next('/login');
+  }else{
+    next();
+  }
+});
+
 export default router;
 

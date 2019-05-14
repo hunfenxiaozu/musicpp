@@ -78,11 +78,6 @@ export default {
           email: '',
           username: ''
        },
-        registerUser: {
-         username: '',
-         password: '',
-         email: ''
-       },
         rules: {
           password: [
             { validator: validatePass, trigger: 'blur' }
@@ -103,10 +98,7 @@ export default {
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.registerUser.username = this.ruleForm.username
-            this.registerUser.password = this.ruleForm.password
-            this.registerUser.email = this.ruleForm.email
-            this.postRegisterData()
+            this.registerUser();
           } else {
             console.log('error submit!!');
             return false;
@@ -116,18 +108,20 @@ export default {
       resetForm(formName) {
         this.$refs[formName].resetFields();
       },
-      postRegisterData(){
-        var data = this.$Qs.stringify(this.registerUser);
-        this.$axios
-                .post("http://localhost:3000/userInfo", data, {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then((res) => {
-                  this.$message({
-                    message: '注册成功！请登录！',
-                    type: 'success'
-                  });
-                  this.$router.push("/login")
-                })
-                .catch((err) => {
-                  console.log(err)
+      registerUser () {
+        const param = {
+          username: this.ruleForm.username,
+          password: this.ruleForm.password,
+          email: this.ruleForm.email
+        };
+        this.$axios.post('api/users/register', param)
+                .then((res) => {
+                  if(res.data.email === "registed"){
+                    this.$message({
+                      message: '该邮箱已被注册！',
+                      type: 'warning'
+                    })
+                  }
                 })
       }
     }

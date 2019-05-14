@@ -1,41 +1,55 @@
 <template>
-
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <el-menu-item class="elitem" index="1"><router-link to="/recommend">logo</router-link></el-menu-item>
-        <el-menu-item class="elitem" index="2"><router-link to="/recommend">找想听的音乐</router-link></el-menu-item>
-        <el-menu-item class="elitem" index="3"><router-link to="/bbs">说音乐相关的话题</router-link></el-menu-item>
+        <el-menu-item class="elitem" index="/">logo</el-menu-item>
+        <el-menu-item class="elitem" index="/recommend">找想听的音乐</el-menu-item>
+        <el-menu-item class="elitem" index="/bbs">说音乐相关的话题</el-menu-item>
         <el-menu-item >
           <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
         </el-menu-item>
-        <el-menu-item class="elitem" index="4"><router-link to="/login">登录</router-link></el-menu-item>
-        <el-menu-item class="elitem" index="5"><router-link to="/logon">注册</router-link></el-menu-item>
+        <el-menu-item class="elitem" index="/login" v-show="!user.name">登录</el-menu-item>
+        <el-menu-item class="elitem" index="/logon" v-show="!user.name">注册</el-menu-item>
+        <el-menu-item class="elitem" index="/personal" v-if="user.name">{{user.name}}</el-menu-item>
     </el-menu>
-
-
-    
-
-
 </template>
 
 <script>
+    import jwt_decode from 'jwt-decode'
 export default {
   data() {
       return {
         activeIndex: '1',
         input3: '',
-        select: ''
+        select: '',
+          avatar: '',
+          username: '',
+        login: true
       };
     },
     methods: {
       handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+        this.$router.push(key)
+      },
+        checkU(){
+            if(localStorage.Token){
+                const token = localStorage.Token;
+                const decoded = jwt_decode(token);
+                // console.log(decoded);
+                this.username = decoded.name;
+                this.login = false;
+            }
+        }
+    },
+    mounted() {
+    },
+    computed: {
+      user() {
+          if(this.$store.getters.user){
+              return this.$store.getters.user;
+          }
       }
-    
-
     }
-
 }
 </script>
 

@@ -1,16 +1,18 @@
 <template>
-    <el-card class="box-card" shadow="hover">
-		aaa
-	</el-card>
+	<div class="card">
+		<el-card class="box-card" shadow="hover">
+			aaa
+		</el-card>
+	</div>
 </template>
 
 <script>
 export default {
 	props : [ 'listcontent' ],
 	data() {
-    return {
-      
-    };
+		return {
+
+		}
   }
  }
 </script>
@@ -19,6 +21,6 @@ export default {
 <style scoped>
   .box-card{
   	width: 240px;
-  	height: 240px;
+	  height: 240px;
   }
 </style>
