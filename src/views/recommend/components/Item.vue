@@ -14,7 +14,10 @@
  	<div class="listmaster">
  		<div class="listleft">
  			<div class="leftlist" v-for="listcontent in listcontent">
- 				<card :listcontent = "listcontent" />
+ 				<router-link :to="'/music/id='+listcontent.id">
+					<card :listcontent = "listcontent" />
+				</router-link>
+ 				
  			</div>
  		</div>
  		<div class="listrecommend">
@@ -36,21 +39,27 @@ export default {
 		return{
 			listcontent : [ 
 				{
+					id:1,
 					listtitle : 'asdf'
 				},
 				{
+					id:2,
 					listtitle : 'asdf'
 				},
 				{
+					id:3,
 					listtitle : 'asdf'
 				},
 				{
+					id:4,
 					listtitle : 'asdf'
 				},
 				{
+					id:5,
 					listtitle : 'asdf'
 				},
 				{
+					id:6,
 					listtitle : 'asdf'
 				}
 			 ]

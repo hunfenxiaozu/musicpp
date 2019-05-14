@@ -11,6 +11,7 @@ import Mtheory from './views/bbs/mtheory/Mtheory'
 import Stave from './views/bbs/stave/Stave'
 import Simple from './views/bbs/simple/Simple'
 import Rank from './views/rank/Rank'
+import MusicItem from './views/musicItem/MusicItem'
 
 Vue.use(Router)
 const router = new Router({
@@ -34,6 +35,9 @@ const router = new Router({
             {
               path: '/rank',
               component: Rank
+            },{
+              path: '/music/:id', 
+              component: MusicItem
             }
           ]
         },
