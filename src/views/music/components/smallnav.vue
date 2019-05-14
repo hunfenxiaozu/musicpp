@@ -7,8 +7,13 @@
 		background-color="#409EFF"
 		text-color="#fff"
 		active-text-color="#fff">
+<<<<<<< HEAD
 		<el-menu-item class='elItem' index="/recommend">推荐</el-menu-item>
 		<el-menu-item class='elItem' index="/rank">排行</el-menu-item>
+=======
+		<el-menu-item class='elItem' index="1"><router-link to="/recommend">推荐</router-link></el-menu-item>
+		<el-menu-item class='elItem' index="2"><router-link to="/rank">排行</router-link></el-menu-item>
+>>>>>>> abe9377992aad2f8e6c999582161bc809a98bda2
 		<el-menu-item class='elItem' index="3">歌单</el-menu-item>
 		<el-menu-item class='elItem' index="4">歌手</el-menu-item>
 	</el-menu>

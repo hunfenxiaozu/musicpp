@@ -8,7 +8,7 @@
 	      <el-table-column
 	        prop="name"
 	        label="歌名"
-	        width="300">
+	        width="299">
 	      </el-table-column>
 	      <el-table-column
 	        prop="singer"
