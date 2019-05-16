@@ -7,17 +7,25 @@
  		</div>
 	 	<div class="hot">
 			<div class="tcolotb"></div>
-	 		<span>今日排行</span>
+	 		<span>今日TOP5</span>
 	 	</div>
  	</div>
  	
  	<div class="listmaster">
  		<div class="listleft">
  			<div class="leftlist" v-for="listcontent in listcontent">
- 				<router-link :to="'/music/id='+listcontent.id">
-					<card :listcontent = "listcontent" />
-				</router-link>
- 				
+				<el-card class="box-card" shadow="hover">
+					<div class="music-title">
+						{{listcontent.musicTitle}}
+					</div>
+					<div class="music-author">
+						<router-link :to="'/music/'+listcontent.id">{{listcontent.author}}</router-link>
+					</div>
+					<div class="btnCow">
+						<el-button :icon="icon" circle @click="playing"></el-button>
+						<el-button type="warning" icon="el-icon-star-off" circle size="small"></el-button>
+					</div>
+				</el-card>
  			</div>
  		</div>
  		<div class="listrecommend">
@@ -30,41 +38,53 @@
 </template>
 
 <script>
-	import card from './Card.vue'
 	import collapse from './Collapse.vue'
 export default {
-	components: { card,collapse },
+	components: { collapse },
 	props:['title'],
 	data(){
 		return{
+			icon: 'el-icon-video-play',
 			listcontent : [ 
 				{
 					id:1,
-					listtitle : 'asdf'
+					musicTitle : '只因你太美',
+					author: 'KunKun'
 				},
 				{
 					id:2,
-					listtitle : 'asdf'
+					musicTitle : '一时间',
+					author: '韩红'
 				},
 				{
 					id:3,
-					listtitle : 'asdf'
+					musicTitle : '认真',
+					author: '香香'
 				},
 				{
 					id:4,
-					listtitle : 'asdf'
+					musicTitle : 'New Silk Road',
+					author: 'Maksim'
 				},
 				{
 					id:5,
-					listtitle : 'asdf'
+					musicTitle : '九十九岁',
+					author: '寒寒'
 				},
 				{
 					id:6,
-					listtitle : 'asdf'
+					musicTitle : 'Favourite',
+					author: 'Stephane Moraille'
 				}
 			 ]
-				
-				
+		}
+	},
+	methods: {
+		playing () {
+			if(this.icon === 'el-icon-video-play')
+				this.icon = 'el-icon-video-pause'
+			else
+				this.icon = 'el-icon-video-play'
 		}
 	}
  }
@@ -105,5 +125,30 @@ export default {
 		justify-content: space-between;
 		align-items: space-between;
 		width: 64%;
+	}
+	.leftlist{
+		width: 100%;
+		margin: 5px 0;
+	}
+	.list >>> .el-card__body{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.music-title{
+		flex: 1;
+	}
+	.music-author{
+		flex: 1;
+
+	}
+	.music-author a{
+		color: #999;
+		text-decoration: none;
+	}
+	.btnCow button{
+		flex: 1;
+		padding: 5px;
+		font-size: 16px;
 	}
 </style>

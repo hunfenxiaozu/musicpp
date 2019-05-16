@@ -36,11 +36,12 @@ const router = new Router({
             {
               path: '/rank',
               component: Rank
-            },{
-              path: '/music/:id', 
-              component: MusicItem
             }
           ]
+        },
+        {
+          path: '/music/:id',
+          component: MusicItem
         },
         {
           path: '/personal',

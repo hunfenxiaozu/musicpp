@@ -1,22 +1,36 @@
 <template>
-	<el-carousel :interval="4000" type="card" height="500px;">
-    	<el-carousel-item v-for="item in item" :key="item.index">
-      		<h3 class="medium">{{ item.title }}</h3>
-    	</el-carousel-item>
-    </el-carousel>
-
+	<div class="swiper">
+		<el-carousel :interval="3000" type="card" loop>
+			<el-carousel-item :key="item.index">
+				<img src="../../../assets/swiper/1.jpg" alt="">
+			</el-carousel-item>
+			<el-carousel-item :key="item.index">
+				<img src="../../../assets/swiper/2.jpg" alt="">
+			</el-carousel-item>
+			<el-carousel-item :key="item.index">
+				<img src="../../../assets/swiper/3.jpg" alt="">
+			</el-carousel-item>
+			<el-carousel-item :key="item.index">
+				<img src="../../../assets/swiper/4.jpg" alt="">
+			</el-carousel-item>
+			<el-carousel-item :key="item.index">
+				<img src="../../../assets/swiper/5.jpg" alt="">
+			</el-carousel-item>
+		</el-carousel>
+	</div>
 </template>
 
 <script>
 export default {
   data(){
     return{
-      item : [ {index:1,title:'aaa'},
-      {index:2,title:'bbb'},
-      {index:3,title:'aaa'},
-      {index:4,title:'bbb'},
-      {index:5,title:'aaa'},
-      {index:6,title:'bbb'} ] 
+      item : [
+		  {index:1,images: '../../../assets/swiper/1.jpg'},
+		  {index:2,images: '../../../assets/swiper/2.jpg'},
+		  {index:3,images: '../../../assets/swiper/3.jpg'},
+		  {index:4,images: '../../../assets/swiper/4.jpg'},
+		  {index:5,images: '../../../assets/swiper/5.jpg'}
+	  ]
     }
   }
  }
@@ -24,25 +38,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .el-carousel__item h3 {
-    color: #fff;
-    text-shadow: 1px 1px 1px #333;
-    font-size: 32px;
-
-    line-height: 300px;
-    text-align: center;
-    margin: 0;
+	.swiper >>> .el-carousel__container{
+		height: 250px;
+	}
+  .el-carousel__item {
+	  height: 250px;
   }
 
   .leftlist{
-	  width: 30%;
+	  width: 100%;
   }
-  
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-  
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
+	img{
+		width: 100%;
+		height: 100%;
+	}
+
 </style>

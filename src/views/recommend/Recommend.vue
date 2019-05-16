@@ -29,10 +29,6 @@ export default {
 					{
 						id : "solo",
 						title :'独奏'
-					},
-					{
-						id : "coverTan",
-						title :'翻弹'
 					}
 				]
 		}

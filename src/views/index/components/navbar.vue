@@ -1,6 +1,6 @@
 <template>
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <el-menu-item class="elitem" index="/">logo</el-menu-item>
+        <el-menu-item class="elitem" index="/"><img src="../../../assets/m-logo.png" alt=""></el-menu-item>
         <el-menu-item class="elitem" index="/recommend">找想听的音乐</el-menu-item>
         <el-menu-item class="elitem" index="/bbs">说音乐相关的话题</el-menu-item>
         <el-menu-item >
@@ -63,7 +63,8 @@ export default {
     justify-content: center;
     /*line-height: 50px;*/
   }
-  .elitem a{
-     text-decoration: none;
+
+  img{
+      width: 225px;
   }
 </style>
