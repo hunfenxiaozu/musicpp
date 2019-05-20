@@ -10,7 +10,7 @@
 	 		<span>今日TOP5</span>
 	 	</div>
  	</div>
- 	
+
  	<div class="listmaster">
  		<div class="listleft">
  			<div class="leftlist" v-for="listcontent in listcontent">
@@ -23,6 +23,7 @@
 					</div>
 					<div class="btnCow">
 						<el-button :icon="icon" circle @click="playing"></el-button>
+						<audio :src = "listcontent.src" controls></audio>
 						<el-button type="warning" icon="el-icon-star-off" circle size="small"></el-button>
 					</div>
 				</el-card>
@@ -32,7 +33,7 @@
  			<collapse />
  		</div>
  	</div>
- 	
+
  </div>
 
 </template>
@@ -45,36 +46,48 @@ export default {
 	data(){
 		return{
 			icon: 'el-icon-video-play',
-			listcontent : [ 
+			listcontent : [
 				{
 					id:1,
+					play: 'false',
 					musicTitle : '只因你太美',
-					author: 'KunKun'
+					author: 'KunKun',
+					src: ''
 				},
 				{
 					id:2,
+					play: 'false',
 					musicTitle : '一时间',
-					author: '韩红'
+					author: '韩红',
+					src: ''
 				},
 				{
 					id:3,
+					play: 'false',
 					musicTitle : '认真',
-					author: '香香'
+					author: '香香',
+					src: ''
 				},
 				{
 					id:4,
+					play: 'false',
 					musicTitle : 'New Silk Road',
-					author: 'Maksim'
+					author: 'Maksim',
+					src: ''
 				},
 				{
 					id:5,
+					play: 'false',
 					musicTitle : '九十九岁',
-					author: '寒寒'
+					author: '寒寒',
+					src: ''
 				},
 				{
 					id:6,
+					play: 'false',
 					musicTitle : 'Favourite',
-					author: 'Stephane Moraille'
+					author: 'Stephane Moraille',
+					src: ''
 				}
 			 ]
 		}
