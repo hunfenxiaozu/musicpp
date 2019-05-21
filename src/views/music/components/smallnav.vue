@@ -10,7 +10,7 @@
 		<el-menu-item class='elItem' index="/recommend">推荐</el-menu-item>
 		<el-menu-item class='elItem' index="/rank">排行</el-menu-item>
 		<el-menu-item class='elItem' index="3">歌单</el-menu-item>
-		<el-menu-item class='elItem' index="4">歌手</el-menu-item>
+		<el-menu-item class='elItem' index="/singer">歌手</el-menu-item>
 	</el-menu>
 
 </template>

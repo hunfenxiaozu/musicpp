@@ -40,6 +40,7 @@
 
 <script>
 	import collapse from './Collapse.vue'
+	// import music1 from '../../../assets/musci/ARC_SYSTEM_WORKS-Birthday_Train.mp3'
 export default {
 	components: { collapse },
 	props:['title'],
@@ -52,7 +53,7 @@ export default {
 					play: 'false',
 					musicTitle : '只因你太美',
 					author: 'KunKun',
-					src: '../../../assets/musci/ARC_SYSTEM_WORKS-Birthday_Train.mp3'
+					src: music1
 				},
 				{
 					id:2,

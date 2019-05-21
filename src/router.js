@@ -13,6 +13,7 @@ import Simple from './views/bbs/simple/Simple'
 import Rank from './views/rank/Rank'
 import Personal from './views/personal/Personal'
 import MusicItem from './views/musicItem/MusicItem'
+import Singer from './views/singer/Singer'
 
 Vue.use(Router)
 const router = new Router({
@@ -36,6 +37,10 @@ const router = new Router({
             {
               path: '/rank',
               component: Rank
+            },
+            {
+              path: '/singer',
+              component: Singer
             }
           ]
         },
