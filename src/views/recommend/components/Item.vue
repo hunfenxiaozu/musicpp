@@ -52,7 +52,7 @@ export default {
 					play: 'false',
 					musicTitle : '只因你太美',
 					author: 'KunKun',
-					src: ''
+					src: '../../../assets/musci/ARC_SYSTEM_WORKS-Birthday_Train.mp3'
 				},
 				{
 					id:2,

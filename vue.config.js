@@ -1,5 +1,5 @@
 module.exports = {
-    baseUrl: './',
+    publicPath: './',
     devServer: {
         open: true,
         host: 'localhost',
@@ -20,5 +20,18 @@ module.exports = {
             },
         },
         before: app => { }
-    }
+    },
+    chainWebpack: config => {
+    config
+      .module
+        .rule('vue')
+        .test(/\.mp3$/)
+        .use('url-loader')
+        .loader('url-loader')
+        .tap(options => {
+		options.transformAssetUrls = {
+  			audio: 'src',
+		}
+		return options;
+        });
 };
