@@ -13,21 +13,10 @@
 
  	<div class="listmaster">
  		<div class="listleft">
- 			<div class="leftlist" v-for="listcontent in listcontent">
-				<el-card class="box-card" shadow="hover">
-					<div class="music-title">
-						{{listcontent.musicTitle}}
-					</div>
-					<div class="music-author">
-						<router-link :to="'/music/'+listcontent.id">{{listcontent.author}}</router-link>
-					</div>
-					<div class="btnCow">
-						<el-button :icon="icon" circle @click="playing"></el-button>
-						<audio :src = "listcontent.src" controls></audio>
-						<el-button type="warning" icon="el-icon-star-off" circle size="small"></el-button>
-					</div>
-				</el-card>
- 			</div>
+ 			<aplayer autoplay
+		  :music="music[0]"
+		  :list="music"
+		/>
  		</div>
  		<div class="listrecommend">
  			<collapse />
@@ -40,57 +29,50 @@
 
 <script>
 	import collapse from './Collapse.vue'
-	// import music1 from '../../../assets/musci/ARC_SYSTEM_WORKS-Birthday_Train.mp3'
+	import music1 from '../../../assets/music/ARC_SYSTEM_WORKS-Birthday_Train.mp3'
+	import music2 from '../../../assets/music/ARC SYSTEM WORKS - The Lily of steel.mp3'
+	import music3 from '../../../assets/music/Gabriela_Robin-Green_Bird.mp3'
+	import music4 from '../../../assets/music/Rie_fu-Life_Is_Like_A_Boat.mp3'
+	import music5 from '../../../assets/music/米津玄師-Lemon.mp3'
+	import Aplayer from 'vue-aplayer'
 export default {
-	components: { collapse },
+	components: { collapse,Aplayer },
 	props:['title'],
 	data(){
 		return{
 			icon: 'el-icon-video-play',
-			listcontent : [
-				{
-					id:1,
-					play: 'false',
-					musicTitle : '只因你太美',
-					author: 'KunKun',
-					src: music1
-				},
-				{
-					id:2,
-					play: 'false',
-					musicTitle : '一时间',
-					author: '韩红',
-					src: ''
-				},
-				{
-					id:3,
-					play: 'false',
-					musicTitle : '认真',
-					author: '香香',
-					src: ''
-				},
-				{
-					id:4,
-					play: 'false',
-					musicTitle : 'New Silk Road',
-					author: 'Maksim',
-					src: ''
-				},
-				{
-					id:5,
-					play: 'false',
-					musicTitle : '九十九岁',
-					author: '寒寒',
-					src: ''
-				},
-				{
-					id:6,
-					play: 'false',
-					musicTitle : 'Favourite',
-					author: 'Stephane Moraille',
-					src: ''
-				}
-			 ]
+			 music:[
+				       {
+				       	 title: 'birthday train',
+						 artist: '石渡太辅',
+						 src: music1,
+						 pic: ''
+				       },
+				       {
+				       	 title: 'The Lily of steel',
+						 artist: '石渡太辅',
+						 src: music2,
+						 pic: ''
+				       },
+				       {
+				       	 title: 'Green Bird',
+						 artist: 'Gabriela Robin',
+						 src: music3,
+						 pic: ''
+				       },
+				       {
+				       	 title: 'Life Is Like A Boat',
+						 artist: 'Rie fu',
+						 src: music4,
+						 pic: ''
+				       },
+				       {
+				       	 title: 'lemon',
+						 artist: '米津玄師',
+						 src: music5,
+						 pic: ''
+				       }
+				    ]
 		}
 	},
 	methods: {
@@ -139,6 +121,9 @@ export default {
 		justify-content: space-between;
 		align-items: space-between;
 		width: 64%;
+	}
+	.listleft .aplayer{
+		width: 100%;
 	}
 	.leftlist{
 		width: 100%;
