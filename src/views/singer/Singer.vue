@@ -7,7 +7,15 @@
 		 				<img :src="singer.imgUrl" alt="">
 		 				<div class="singerName">{{singer.name}}</div>
 		 			</div>
-		 			<div class="singerMessage">{{singer.message}}</div>
+		 			<div class="singerMessage">
+		 				个性签名：{{singer.message}}
+		 				粉丝数：{{singer.fans}}
+		 				作品数：{{singer.works}}
+		 				<button @click="follow(singer.id)">
+							<div v-if = "singer.isFollow">取消关注</div>
+							<div v-if = "!singer.isFollow">关注</div>
+		 				</button>
+		 			</div>
 				</el-card>
 		 		
 		 	</div>
@@ -27,34 +35,68 @@ export default {
 		return{
 			singer:[
 			{name:'asdf',
+			id: 1,
 			imgUrl: img1,
-			message: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+			message: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+			fans: 20,
+			works: 20,
+			isFollow: false
 			},
 			{name:'asdf',
+			id: 2,
 			imgUrl: img4,
-			message: ''
+			message: '',
+			fans: 20,
+			works: 20,
+			isFollow: false
 			},
 			{name:'asdf',
+			id: 3,
 			imgUrl: img2,
-			message: ''
+			message: '',
+			fans: 20,
+			works: 20,
+			isFollow: false
 			},
 			{name:'asdf',
+			id: 4,
 			imgUrl: img3,
-			message: ''
+			message: '',
+			fans: 20,
+			works: 20,
+			isFollow: false
 			},
 			{name:'asdf',
+			id: 5,
 			imgUrl: img1,
-			message: ''
+			message: '',
+			fans: 20,
+			works: 20,
+			isFollow: false
 			},
 			{name:'asdf',
+			id: 6,
 			imgUrl: img3,
-			message: ''
+			message: '',
+			fans: 20,
+			works: 20,
+			isFollow: false
 			},
 			{name:'asdf',
+			id: 7,
 			imgUrl: img4,
-			message: ''
+			message: '',
+			fans: 20,
+			works: 20,
+			isFollow: false
 			}
 			]
+		}
+	},
+	methods:{
+		follow : function (id) {
+			this.singer[id-1].isFollow = !this.singer[id-1].isFollow;
+			console.log(this.singer[id-1].isFollow);
 		}
 	}
  }
@@ -80,7 +122,7 @@ export default {
   	height: 100px;
   	border-radius: 50%;
   }
-  .el-card__body{
+  .main >>> .el-card__body{
   	display: flex;
   	justify-content: center;
   	align-items: center;
@@ -91,7 +133,7 @@ export default {
   	align-items: center;
   	width: 20%;
   }
-  .el-card__body .message{
+  .el-card__body .singerMessage{
   	width: 80%;
   }
 </style>
