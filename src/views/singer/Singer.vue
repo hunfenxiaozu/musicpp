@@ -8,13 +8,25 @@
 		 				<div class="singerName">{{singer.name}}</div>
 		 			</div>
 		 			<div class="singerMessage">
-		 				个性签名：{{singer.message}}
-		 				粉丝数：{{singer.fans}}
-		 				作品数：{{singer.works}}
-		 				<button @click="follow(singer.id)">
-							<div v-if = "singer.isFollow">取消关注</div>
-							<div v-if = "!singer.isFollow">关注</div>
-		 				</button>
+		 				<div class="messageleft">
+		 					<div class="message">
+		 						个性签名：{{singer.message}}
+		 					</div>
+		 					<div class="fans">
+		 						<div>粉丝数：{{singer.fans}}</div>
+		 						<div>作品数：{{singer.works}}</div>
+		 						<div></div>
+		 						
+		 					</div>
+		 				
+		 				</div>
+		 				<div class="messageright">
+		 					<button @click="follow(singer.id)">
+								<div v-if = "singer.isFollow">取消关注</div>
+								<div v-if = "!singer.isFollow">关注</div>
+			 				</button>
+		 				</div>
+		 				
 		 			</div>
 				</el-card>
 		 		
@@ -135,5 +147,34 @@ export default {
   }
   .el-card__body .singerMessage{
   	width: 80%;
+  	height: 100%;
+  	display: flex;
+  	justify-content: space-around;
+  }
+  .singerMessage .messageleft{
+  	display: flex;
+  	flex-direction: column;
+  	width: 80%;
+  	height: 100%;
+  	justify-content: space-around;
+  }
+  .singerMessage .messageleft .fans{
+  	display: flex;
+  	justify-content: space-between;
+  }
+  .singerMessage .messageright{
+  	width: 20%;
+  }
+  .messageright button{
+  	background: #409EFF;
+  	width: 50%;
+  	padding: 5px;
+  	color: #fff;
+  	border: 1px solid #eee;
+  	border-radius: 3px;
+  	outline: none;
+  }
+  .messageright button:hover{
+  	background: #3899FE;
   }
 </style>
