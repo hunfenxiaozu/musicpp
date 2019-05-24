@@ -25,6 +25,7 @@
 								<div v-if = "singer.isFollow">取消关注</div>
 								<div v-if = "!singer.isFollow">关注</div>
 			 				</button>
+			 				<button to="/asdf">查看主页</button>
 		 				</div>
 		 				
 		 			</div>
@@ -164,6 +165,8 @@ export default {
   }
   .singerMessage .messageright{
   	width: 20%;
+  	display: flex;
+  	flex-direction: column;
   }
   .messageright button{
   	background: #409EFF;
