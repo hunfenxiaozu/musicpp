@@ -21,6 +21,7 @@
 		 				
 		 				</div>
 		 				<div class="messageright">
+<<<<<<< HEAD
 							<div class="guanzhu">
 								<div v-show="singer.follow">已关注</div>
 								<div v-show="!singer.follow">未关注</div>
@@ -31,10 +32,21 @@
 								</el-switch>
 							</div>
 			 				<router-link to="/SingerDetail">查看主页</router-link>
+=======
+		 					<button @click="follow(singer.id)">
+								<div v-if = "singer.isFollow">取消关注</div>
+								<div v-if = "!singer.isFollow">关注</div>
+			 				</button>
+			 				<button to="/asdf">查看主页</button>
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 		 				</div>
 		 				
 		 			</div>
 				</el-card>
+<<<<<<< HEAD
+=======
+		 		
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 		 	</div>
 		 </div>
 	</div>
@@ -51,6 +63,7 @@ export default {
 	data(){
 		return{
 			singer:[
+<<<<<<< HEAD
 			{name:'Raincoat_123',
 			id: 1,
 			imgUrl: img1,
@@ -63,46 +76,95 @@ export default {
 			id: 2,
 			imgUrl: img4,
 			message: '个人喜欢迷幻风格的作品，特别是那种特别迷的音乐，让我着迷。',
+=======
+			{name:'asdf',
+			id: 1,
+			imgUrl: img1,
+			message: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
 			fans: 20,
 			works: 20,
 			isFollow: false
 			},
+			{name:'asdf',
+			id: 2,
+			imgUrl: img4,
+			message: '',
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
+			fans: 20,
+			works: 20,
+			isFollow: false
+			},
+<<<<<<< HEAD
 			{name:'林先生',
 			id: 3,
 			imgUrl: img2,
 			message: '子非鱼，焉知鱼之意？',
+=======
+			{name:'asdf',
+			id: 3,
+			imgUrl: img2,
+			message: '',
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 			fans: 20,
 			works: 20,
 			isFollow: false
 			},
+<<<<<<< HEAD
 			{name:'ESH~',
 			id: 4,
 			imgUrl: img3,
 			message: '子非吾，焉知吾不知鱼之意',
+=======
+			{name:'asdf',
+			id: 4,
+			imgUrl: img3,
+			message: '',
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 			fans: 20,
 			works: 20,
 			isFollow: false
 			},
+<<<<<<< HEAD
 			{name:'Yooh~',
 			id: 5,
 			imgUrl: img1,
 			message: 'What\'s kind of music can be greatest?',
+=======
+			{name:'asdf',
+			id: 5,
+			imgUrl: img1,
+			message: '',
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 			fans: 20,
 			works: 20,
 			isFollow: false
 			},
+<<<<<<< HEAD
 			{name:'周伦伦',
 			id: 6,
 			imgUrl: img3,
 			message: '哎呦！不错喔！',
+=======
+			{name:'asdf',
+			id: 6,
+			imgUrl: img3,
+			message: '',
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 			fans: 20,
 			works: 20,
 			isFollow: false
 			},
+<<<<<<< HEAD
 			{name:'陈迅迅',
 			id: 7,
 			imgUrl: img4,
 			message: '中意就听多滴，唔中意就听少滴',
+=======
+			{name:'asdf',
+			id: 7,
+			imgUrl: img4,
+			message: '',
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 			fans: 20,
 			works: 20,
 			isFollow: false
@@ -170,6 +232,7 @@ export default {
   .singerMessage .messageright{
   	width: 20%;
   	display: flex;
+<<<<<<< HEAD
 	  justify-content: center;
 	  align-items: center;
   	flex-direction: column;
@@ -205,4 +268,20 @@ export default {
 		margin-top: 15px;
 		color: #454545;
 	}
+=======
+  	flex-direction: column;
+  }
+  .messageright button{
+  	background: #409EFF;
+  	width: 50%;
+  	padding: 5px;
+  	color: #fff;
+  	border: 1px solid #eee;
+  	border-radius: 3px;
+  	outline: none;
+  }
+  .messageright button:hover{
+  	background: #3899FE;
+  }
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 </style>

@@ -13,7 +13,11 @@
 
  	<div class="listmaster">
  		<div class="listleft">
+<<<<<<< HEAD
  			<aplayer
+=======
+ 			<aplayer autoplay
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 		  :music="music[0]"
 		  :list="music"
 		/>

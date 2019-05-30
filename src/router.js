@@ -18,6 +18,7 @@ import MusicScore from './views/bbs/musicscore/MusicScore'
 import Rank from './views/rank/Rank'
 import MusicItem from './views/musicItem/MusicItem'
 import Singer from './views/singer/Singer'
+<<<<<<< HEAD
 import SingerDetail from './views/singer/singerDetail/SingerDetail'
 import HeCollection from './views/singer/singerDetail/heCollection/MyCollection'
 import HeContribute from './views/singer/singerDetail/heContribute/MyContribute'
@@ -30,6 +31,8 @@ import MyFollow from './views/personal/myFollow/MyFollow'
 import MyInformation from './views/personal/myInformation/MyInformation'
 import MusicDetail from "./views/bbs/musicscore/musicDetail/MusicDetail";
 
+=======
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 
 Vue.use(Router)
 const router = new Router({

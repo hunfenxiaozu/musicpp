@@ -9,6 +9,10 @@
 		active-text-color="#fff">
 		<el-menu-item class='elItem' index="/recommend">推荐</el-menu-item>
 		<el-menu-item class='elItem' index="/rank">排行</el-menu-item>
+<<<<<<< HEAD
+=======
+		<el-menu-item class='elItem' index="3">歌单</el-menu-item>
+>>>>>>> 31de30ad7f1e48dc4a1104291e919fb2fe896050
 		<el-menu-item class='elItem' index="/singer">歌手</el-menu-item>
 	</el-menu>
 
