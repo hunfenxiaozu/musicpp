@@ -1,14 +1,21 @@
 <template>
-    <div class="p-canvas">
-        <div class="black-mark">
-            <div class="comment-mes">
-                <div class="avatar">
-                    <img src="../../../assets/personal/avatar/avatar01.jpg" alt="">
+    <div class="comment-mes">
+        <div class="introduce">
+            <div class="intro-content">
+                <div class="intro-content">
+                    <div class="username">你好！我是 {{username}}</div>
+                    <div class="intro">我想做一只能听懂音乐的斑雀，我想在音乐的天空有节奏地挥动翅膀</div>
                 </div>
-                <div class="introduce">
-                    <p>Hey! I'am Raincoat_123.</p>
-                    <p>Welcome to my HomePage!</p>
-                </div>
+            </div>
+        </div>
+        <div class="avatar">
+            <div class="img">
+                <img src="../../../assets/personal/avatar/avatar01.jpg" alt="">
+            </div>
+            <div class="img-intro">
+                <div class="item">粉丝<div class="item-num">1234</div></div>
+                <div class="item">收藏<div class="item-num">22</div></div>
+                <div class="item">关注<div class="item-num">22</div></div>
             </div>
         </div>
     </div>
@@ -16,48 +23,80 @@
 
 <script>
     export default {
-        name: "PCanvas"
+        name: "PCanvas",
+        props: [ 'username' ]
     }
 </script>
 
 <style scoped>
-    .p-canvas{
-        width: 100%;
-        margin: 0 auto;
-    }
-    .black-mark{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-color: #372d38;
-        opacity: 0.8;
-        z-index: 3;
-    }
-    .p-canvas img{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 2;
-        /*background-color: rgba(0,0,0,.5);*/
-    }
     .comment-mes{
-        height: 100%;
+        width: 70%;
+        height: 250px;
+        margin: 10px auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        /*background-color: #fff;*/
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .introduce{
+        flex: 3;
+        height: 100%;
+        background-color: rgba(28,28,28,.7);
         color: #fff;
         font-size: 24px;
     }
+    .intro-content{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /*align-items: center;*/
+        margin-left: 30px;
+    }
+    .username{
+        margin-bottom: 10px;
+        font-size: 36px;
+    }
+    .intro{
+        color: #dedede;
+        font-size: 20px;
+        font-weight: 300;
+    }
     .avatar{
-        height: 110px;
-        width: 110px;
-        box-shadow: 1px 2px 2px 1px rgba(0,0,0,.8);
-        margin-right: 25px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .avatar .img{
+        height: 150px;
+        width: 150px;
     }
     .avatar img{
-        height: 110px;
-        width: 110px;
+        height: 150px;
+        width: 150px;
+        margin: 0 auto;
+        box-shadow: 1px 2px 2px 1px rgba(0,0,0,.8);
+    }
+    .img-intro{
+        width: 100%;
+        margin-top: 20px;
+        color: #fff;
+        display: flex;
+        justify-content: space-around;
+    }
+    .img-intro .item,
+    .img-intro .item-num{
+        /*color: #999;*/
+        font-size: 16px;
+        text-align: center;
+    }
+    .img-intro .item-num{
+        margin-top: 10px;
+        font-size: 24px;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     }
 </style>

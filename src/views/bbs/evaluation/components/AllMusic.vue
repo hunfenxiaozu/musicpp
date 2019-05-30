@@ -6,8 +6,8 @@
                 <el-tab-pane v-for="pane of allpane" :label="pane.ab">
                     <div class="item" v-for="item of pane.contents">
                     <span>
-                        <router-link class="item-title" to="/">{{item.title}}</router-link>
-                        <router-link class="item-author" to="/">{{item.author}}</router-link>
+                        <router-link class="item-title" to="/eva-detail">{{item.title}}</router-link>
+                        <router-link class="item-author" to="/SingerDetail">{{item.author}}</router-link>
                         <span class="time">{{item.time}}</span>
                     </span>
                         <el-divider></el-divider>

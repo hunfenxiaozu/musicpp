@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import smallnav from './components/smallnav.vue'
+import Smallnav from './components/smallnav.vue'
 export default {
 	name: 'music',
-    components:{ smallnav }
+    components:{ Smallnav }
  }
 </script>
 

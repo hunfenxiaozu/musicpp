@@ -1,43 +1,61 @@
 <template>
  <div class="rankbang">
  	<div class="center">
- 		<h3>xxx</h3>
-	 	<el-table
-	      :data="tableData"
-	      style="width: 100%">
-	      <el-table-column
-	        prop="name"
-	        label="歌名"
-	        width="299">
-	      </el-table-column>
-	      <el-table-column
-	        prop="singer"
-	        label="歌手"
-	        width="459">
-	      </el-table-column>
-	      
-	    </el-table>
+	    <aplayer
+		  :music="music[0]"
+		  :list="music"
+		/>
  	</div>
+ 	
  </div>
 
 </template>
 
 <script>
+	import music1 from '../../../assets/music/ARC_SYSTEM_WORKS-Birthday_Train.mp3'
+	import music2 from '../../../assets/music/ARC SYSTEM WORKS - The Lily of steel.mp3'
+	import music3 from '../../../assets/music/Gabriela_Robin-Green_Bird.mp3'
+	import music4 from '../../../assets/music/Rie_fu-Life_Is_Like_A_Boat.mp3'
+	import music5 from '../../../assets/music/米津玄師-Lemon.mp3'
+	import Aplayer from 'vue-aplayer'
 export default {
+	components: {
+        Aplayer
+    },
 	data() {
       return {
-       tableData: [{
-            name: 'xxx',
-            singer: '周先生'
-
-          }, {
-          	 name: 'xxxx',
-            singer: 'Mr.zhou'
-        },
-         {
-          	 name: 'xxxxx',
-            singer: 'xxxxxxx'
-          }]
+       music:[
+       {
+       	 title: 'birthday train',
+		 artist: '石渡太辅',
+		 src: music1,
+		 pic: ''
+       },
+       {
+       	 title: 'The Lily of steel',
+		 artist: '石渡太辅',
+		 src: music2,
+		 pic: ''
+       },
+       {
+       	 title: 'Green Bird',
+		 artist: 'Gabriela Robin',
+		 src: music3,
+		 pic: ''
+       },
+       {
+       	 title: 'Life Is Like A Boat',
+		 artist: 'Rie fu',
+		 src: music4,
+		 pic: ''
+       },
+       {
+       	 title: 'lemon',
+		 artist: '米津玄師',
+		 src: music5,
+		 pic: ''
+       }
+       ]
       
       }
     }

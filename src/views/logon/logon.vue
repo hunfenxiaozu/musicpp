@@ -121,6 +121,12 @@ export default {
                       message: '该邮箱已被注册！',
                       type: 'warning'
                     })
+                  }else{
+                    this.$message({
+                      message: '注册成功！',
+                      type: 'success'
+                    })
+                    this.$router.push('/login')
                   }
                 })
       }

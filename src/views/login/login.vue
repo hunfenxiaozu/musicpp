@@ -94,12 +94,12 @@ export default {
                         message: '登录成功！ 欢迎您   ',
                         type: 'success'
                     });
-                    console.log(res);
+                    // console.log(res);
                     const { token } = res.data;
                     localStorage.setItem('Token', token);
 
                     const decoded = jwt_decode(token);
-                    // console.log(decoded);
+                    console.log(decoded);
 
                     this.$store.dispatch("setAuthenticated",!this.isEmpty(decoded));
                     this.$store.dispatch("setUser",decoded);

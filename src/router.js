@@ -6,13 +6,30 @@ import Bbs from '@/views/bbs/Bbs'
 import Logon from './views/logon/logon'
 import Login from './views/login/login'
 import Recommend from './views/recommend/Recommend'
+
 import Evaluation from './views/bbs/evaluation/Evaluation'
+import EvaDetail from './views/bbs/evaluation/evaDetail/EvaDetail'
 import Mtheory from './views/bbs/mtheory/Mtheory'
-import Stave from './views/bbs/stave/Stave'
-import Simple from './views/bbs/simple/Simple'
+import VideoDetail from './views/bbs/mtheory/videodetail/VideoDetail'
+import Forum from './views/bbs/forum/Forum'
+import ForumDetail from './views/bbs/forum/evaDetail/EvaDetail'
+import MusicScore from './views/bbs/musicscore/MusicScore'
+
 import Rank from './views/rank/Rank'
-import Personal from './views/personal/Personal'
 import MusicItem from './views/musicItem/MusicItem'
+import Singer from './views/singer/Singer'
+import SingerDetail from './views/singer/singerDetail/SingerDetail'
+import HeCollection from './views/singer/singerDetail/heCollection/MyCollection'
+import HeContribute from './views/singer/singerDetail/heContribute/MyContribute'
+import HeFollow from './views/singer/singerDetail/heFollow/MyFollow'
+
+import Personal from './views/personal/Personal'
+import MyCollection from './views/personal/myCollection/MyCollection'
+import MyContribute from './views/personal/myContribute/MyContribute'
+import MyFollow from './views/personal/myFollow/MyFollow'
+import MyInformation from './views/personal/myInformation/MyInformation'
+import MusicDetail from "./views/bbs/musicscore/musicDetail/MusicDetail";
+
 
 Vue.use(Router)
 const router = new Router({
@@ -36,6 +53,10 @@ const router = new Router({
             {
               path: '/rank',
               component: Rank
+            },
+            {
+              path: '/singer',
+              component: Singer
             }
           ]
         },
@@ -44,13 +65,61 @@ const router = new Router({
           component: MusicItem
         },
         {
+          path: "/eva-detail",
+          component: EvaDetail
+        },
+        {
+          path: "/video-detail",
+          component: VideoDetail
+        },
+        {
+          path: "/music-detail",
+          component: MusicDetail
+        },
+        {
+          path: "/forum-detail",
+          component: ForumDetail
+        },
+        {
+          path: '/SingerDetail',
+          component: SingerDetail,
+          children: [
+            {
+              path: '/hecollection',
+              component: HeCollection
+            },{
+              path: '/hecontribute',
+              component: HeContribute
+            },{
+              path: '/hefollow',
+              component: HeFollow
+            }
+          ]
+        },
+        {
           path: '/personal',
-          component: Personal
+          component: Personal,
+          redirect: '/mycontribute',
+          children: [
+            {
+              path: '/mycollection',
+              component: MyCollection
+            },{
+              path: '/mycontribute',
+              component: MyContribute
+            },{
+              path: '/myfollow',
+              component: MyFollow
+            },{
+              path: '/myinformation',
+              component: MyInformation
+            },
+          ]
         },
         {
           path: "/bbs",
           component:  Bbs,
-          redirect: '/evaluation',
+          redirect: '/forum',
           children: [
             {
               path: "/evaluation",
@@ -61,12 +130,12 @@ const router = new Router({
               component: Mtheory
             },
             {
-              path: "/notation/stave",
-              component: Stave
+              path: "/music-score",
+              component: MusicScore
             },
             {
-              path: "/notation/simple",
-              component: Simple
+              path: "/forum",
+              component: Forum
             },
           ]
         },
@@ -85,7 +154,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   const isLogin = localStorage.Token ? true : false;
-  if(to.path === "/personal"){
+  if(to.path === "/mycollection"){
     isLogin ? next() : next('/login');
   }else{
     next();

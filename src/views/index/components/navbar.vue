@@ -2,8 +2,8 @@
     <div class="navbar">
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
             <el-menu-item class="elitem" index="/"><img src="../../../assets/m-logo.png" alt=""></el-menu-item>
-            <el-menu-item class="elitem" index="/recommend">找想听的音乐</el-menu-item>
-            <el-menu-item class="elitem" index="/bbs">说音乐相关的话题</el-menu-item>
+            <el-menu-item class="elitem" index="/recommend">听音乐</el-menu-item>
+            <el-menu-item class="elitem" index="/bbs">学音乐</el-menu-item>
             <el-menu-item >
                 <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
                     <el-button slot="append" icon="el-icon-search"></el-button>
@@ -37,13 +37,14 @@ export default {
             if(localStorage.Token){
                 const token = localStorage.Token;
                 const decoded = jwt_decode(token);
-                // console.log(decoded);
+                console.log(decoded);
                 this.username = decoded.name;
                 this.login = false;
             }
         }
     },
     mounted() {
+      this.checkU();
     },
     computed: {
       user() {
@@ -60,6 +61,7 @@ export default {
   .nav,.el-menu--horizontal{
     display: flex;
     justify-content: center;
+      z-index: 10;
   }
 
   img{
